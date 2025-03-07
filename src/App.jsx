@@ -1,5 +1,5 @@
 import "./App.css";
-import WebAppName from "./WebAppName.jsx";
+import WebAppName from "./components/WebAppName";
 
 function Page() {
   return (
