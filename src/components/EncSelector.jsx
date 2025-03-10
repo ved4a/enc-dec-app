@@ -3,9 +3,9 @@ import { useState } from "react";
 function SetEcryption({ onSelect }) {
   const encryptions = ["Vigenere", "Playfair", "Caesar", "Affine"];
   return (
-    <div>
-      <h2>Choose your cipher</h2>
-      <select onChange={(e) => onSelect(e.target.value)}>
+    <div className="section">
+      <h2 className="section-title">Choose your cipher</h2>
+      <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
         <option value="">-- Select --</option>
         {encryptions.map((enc) => (
           <option key={enc} value={enc}></option>
@@ -23,9 +23,10 @@ function EncryptionInput({ encryption }) {
   if (!encryption) return null;
 
   return (
-    <div>
-      <h2>Enter plaintext</h2>
+    <div className="section">
+      <h2 className="section-title">Enter plaintext</h2>
       <input
+        className="plaintext-input"
         type="text"
         placeholder="Start typing here"
         value={plaintext}
@@ -33,6 +34,7 @@ function EncryptionInput({ encryption }) {
       />
       {encryption === "Caesar" ? (
         <input
+          className="key-input"
           type="number"
           placeholder="Enter shift here"
           value={shift}
@@ -40,13 +42,14 @@ function EncryptionInput({ encryption }) {
         />
       ) : (
         <input
+          className="key-input"
           type="text"
           placeholder="Enter key here"
           value={key}
           onChange={(e) => setKey(e.target.value)}
         />
       )}
-      <button>Encrypt</button>
+      <button className="enc-btn">Encrypt</button>
     </div>
   );
 }
