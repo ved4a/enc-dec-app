@@ -15,10 +15,10 @@
 }
 
 #tagline {
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-
+  margin: 0;
   font-style: italic;
+
+  font-size: 12px;
 }
 
 .section {
@@ -34,13 +34,15 @@
   text-align: left;
 }
 
-.select-btn {
+.select-btn,
+.plaintext-input,
+.key-input {
   width: 100%;
-  padding: 0.5rem 1rem;
   background-color: #202224;
   border: none;
   border-radius: 5px;
   line-height: inherit;
+  padding: 0.5rem;
 }
 
 .default-option {
