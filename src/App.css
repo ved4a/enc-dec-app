@@ -28,3 +28,12 @@
 .section-title {
   text-transform: uppercase;
 }
+
+.select-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #202224;
+  border: none;
+  border-radius: 5px;
+  line-height: inherit;
+}
