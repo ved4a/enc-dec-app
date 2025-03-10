@@ -40,6 +40,8 @@ function EncryptionInput({ encryption }) {
         <input
           className="key-input"
           type="number"
+          min={1}
+          max={26}
           placeholder="Enter shift here"
           value={shift}
           onChange={(e) => setShift(e.target.value)}
