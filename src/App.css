@@ -28,6 +28,8 @@
 .section-title {
   text-transform: uppercase;
   margin: 1rem 0;
+  font-size: 14;
+  text-align: left;
 }
 
 .select-btn {

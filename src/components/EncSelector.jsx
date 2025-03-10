@@ -4,7 +4,7 @@ function SetEcryption({ onSelect }) {
   const encryptions = ["Vigenere", "Playfair", "Caesar", "Affine"];
   return (
     <div className="section">
-      <h3 className="section-title">Choose your cipher</h3>
+      <p className="section-title">Choose your cipher</p>
       <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
         <option className="default-option" value="">
           -- Select --
@@ -28,7 +28,7 @@ function EncryptionInput({ encryption }) {
 
   return (
     <div className="section actual-encryption">
-      <h3 className="section-title">Enter plaintext</h3>
+      <p className="section-title">Enter plaintext</p>
       <input
         className="plaintext-input"
         type="text"
@@ -36,6 +36,7 @@ function EncryptionInput({ encryption }) {
         value={plaintext}
         onChange={(e) => setPlaintext(e.target.value)}
       />
+      <p className="section-title">Enter key</p>
       {encryption === "Caesar" ? (
         <input
           className="key-input"
