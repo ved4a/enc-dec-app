@@ -29,9 +29,8 @@ function EncryptionInput({ encryption }) {
   return (
     <div className="section actual-encryption">
       <p className="section-title">Enter plaintext</p>
-      <input
+      <textarea
         className="plaintext-input"
-        type="text"
         placeholder="Start typing here"
         value={plaintext}
         onChange={(e) => setPlaintext(e.target.value)}
