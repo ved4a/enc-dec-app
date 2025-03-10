@@ -72,7 +72,7 @@ input {
   justify-content: space-between;
 
   margin-top: 1.5rem;
-  background-color: #64b472;
+  background-color: #8efda0;
   color: #333;
 
   border: none;
@@ -90,8 +90,9 @@ input {
 }
 
 .enc-btn:hover {
-  background-color: #8efda0;
+  background-color: #7bff91;
   color: #1e1e1e;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
 }
 
 .arrow {
