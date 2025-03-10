@@ -37,7 +37,6 @@
 .select-btn,
 .plaintext-input,
 .key-input {
-  width: 100%;
   background-color: #202224;
   border: none;
   border-radius: 5px;
@@ -49,7 +48,8 @@
   color: #808080;
 }
 
-.actual-encryption {
+.actual-encryption,
+.section {
   display: flex;
   flex-direction: column;
   padding-top: 0;
@@ -60,7 +60,7 @@ input {
 }
 
 .plaintext-input {
-  height: 4rem;
+  height: 6rem;
 }
 
 .enc-btn {
