@@ -4,7 +4,7 @@ function SetEcryption({ onSelect }) {
   const encryptions = ["Vigenere", "Playfair", "Caesar", "Affine"];
   return (
     <div className="section">
-      <h2 className="section-title">Choose your cipher</h2>
+      <h3 className="section-title">Choose your cipher</h3>
       <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
         <option value="">-- Select --</option>
         {encryptions.map((enc) => (
@@ -24,7 +24,7 @@ function EncryptionInput({ encryption }) {
 
   return (
     <div className="section">
-      <h2 className="section-title">Enter plaintext</h2>
+      <h3 className="section-title">Enter plaintext</h3>
       <input
         className="plaintext-input"
         type="text"
