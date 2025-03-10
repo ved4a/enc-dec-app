@@ -53,7 +53,14 @@ function EncryptionInput({ encryption }) {
           onChange={(e) => setKey(e.target.value)}
         />
       )}
-      <button className="enc-btn">Encrypt</button>
+      <button className="enc-btn">
+        Encrypt text
+        <img
+          src="./src/assets/right-arrow.svg"
+          alt="right-arrow"
+          className="arrow"
+        />
+      </button>
     </div>
   );
 }
