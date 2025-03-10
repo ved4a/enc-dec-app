@@ -6,7 +6,9 @@ function SetEcryption({ onSelect }) {
     <div className="section">
       <h3 className="section-title">Choose your cipher</h3>
       <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
-        <option value="">-- Select --</option>
+        <option className="default-option" value="">
+          -- Select --
+        </option>
         {encryptions.map((enc) => (
           <option key={enc} value={enc}>
             {enc}
