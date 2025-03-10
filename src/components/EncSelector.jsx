@@ -27,7 +27,7 @@ function EncryptionInput({ encryption }) {
   if (!encryption) return null;
 
   return (
-    <div className="section">
+    <div className="section actual-encryption">
       <h3 className="section-title">Enter plaintext</h3>
       <input
         className="plaintext-input"

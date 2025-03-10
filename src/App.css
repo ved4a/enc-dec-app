@@ -27,6 +27,7 @@
 
 .section-title {
   text-transform: uppercase;
+  margin: 1rem 0;
 }
 
 .select-btn {
@@ -40,4 +41,14 @@
 
 .default-option {
   color: #808080;
+}
+
+.actual-encryption {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+input {
+  margin-bottom: 0.5rem;
 }
