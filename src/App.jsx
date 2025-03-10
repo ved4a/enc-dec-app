@@ -1,12 +1,12 @@
 import "./App.css";
 import WebAppName from "./components/WebAppName.jsx";
-import ComponentTitles from "./components/ComponentTitles.jsx";
+import EncryptionApp from "./components/EncSelector.jsx";
 
 function Page() {
   return (
     <>
       <WebAppName />
-      <ComponentTitles text={"Choose your Cipher"} />
+      <EncryptionApp />
     </>
   );
 }
