@@ -8,7 +8,9 @@ function SetEcryption({ onSelect }) {
       <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
         <option value="">-- Select --</option>
         {encryptions.map((enc) => (
-          <option key={enc} value={enc}></option>
+          <option key={enc} value={enc}>
+            {enc}
+          </option>
         ))}
       </select>
     </div>
