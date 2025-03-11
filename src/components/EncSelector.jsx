@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SetEcryption({ onSelect }) {
+function SetEncryption({ onSelect }) {
   const encryptions = ["Vigenere", "Playfair", "Caesar", "Affine"];
   return (
     <div className="section">
@@ -19,7 +19,26 @@ function SetEcryption({ onSelect }) {
   );
 }
 
-function EncryptionInput({ encryption }) {
+function EncryptDecryptToggle({ mode, onToggle }) {
+  return (
+    <div className="toggle-container">
+      <button
+        className={mode === "encrypt" ? "active" : ""}
+        onClick={() => onToggle("encrypt")}
+      >
+        ENCRYPT
+      </button>
+      <button
+        className={mode === "decrypt" ? "active" : ""}
+        onClick={() => onToggle("decrypt")}
+      >
+        DECRYPT
+      </button>
+    </div>
+  );
+}
+
+function EncryptionInput({ encryption, mode }) {
   const [plaintext, setPlaintext] = useState("");
   const [key, setKey] = useState("");
   const [shift, setShift] = useState("");
@@ -56,7 +75,7 @@ function EncryptionInput({ encryption }) {
         />
       )}
       <button className="enc-btn">
-        Encrypt text
+        {mode === "encrypt" ? "Encrypt text" : "Decrypt text"}
         <img
           src="./src/assets/right-arrow.svg"
           alt="right-arrow"
@@ -69,11 +88,13 @@ function EncryptionInput({ encryption }) {
 
 export default function EncryptionApp() {
   const [selectedEncryption, setSelectedEncryption] = useState("");
+  const [mode, setMode] = useState("encrypt");
 
   return (
     <div>
-      <SetEcryption onSelect={setSelectedEncryption} />
-      <EncryptionInput encryption={selectedEncryption} />
+      <SetEncryption onSelect={setSelectedEncryption} />
+      <EncryptDecryptToggle mode={mode} onToggle={setMode} />
+      <EncryptionInput encryption={selectedEncryption} mode={mode} />
     </div>
   );
 }
