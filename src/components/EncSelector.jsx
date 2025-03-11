@@ -47,7 +47,9 @@ function EncryptionInput({ encryption, mode }) {
 
   return (
     <div className="section actual-encryption">
-      <p className="section-title">Enter plaintext</p>
+      <p className="section-title">
+        {mode === "encrypt" ? "Enter plaintext" : "Enter ciphertext"}
+      </p>
       <textarea
         className="plaintext-input"
         placeholder="Start typing here"
