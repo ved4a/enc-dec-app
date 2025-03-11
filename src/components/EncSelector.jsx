@@ -76,7 +76,7 @@ function EncryptionInput({ encryption, mode }) {
           onChange={(e) => setKey(e.target.value)}
         />
       )}
-      <button className="enc-btn">
+      <button className={`enc-btn ${mode}`}>
         {mode === "encrypt" ? "Encrypt text" : "Decrypt text"}
         <img
           src="./src/assets/right-arrow.svg"

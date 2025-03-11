@@ -89,13 +89,27 @@ input {
   align-self: center;
 }
 
-.enc-btn:hover {
+.arrow {
+  height: 20px;
+  width: auto;
+}
+
+.enc-btn.encrypt {
+  background-color: #8efda0;
+}
+
+.enc-btn.encrypt:hover {
   background-color: #7bff91;
   color: #1e1e1e;
   box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
 }
 
-.arrow {
-  height: 20px;
-  width: auto;
+.enc-btn.decrypt {
+  background-color: #ff7474;
+}
+
+.enc-btn.decrypt:hover {
+  background-color: #ff6969;
+  color: #1e1e1e;
+  box-shadow: 0 5px 15px rgba(255, 92, 92, 0.4);
 }
