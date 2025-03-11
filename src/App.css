@@ -113,3 +113,25 @@ input {
   color: #1e1e1e;
   box-shadow: 0 5px 15px rgba(255, 92, 92, 0.4);
 }
+
+.toggle-container {
+  background-color: #202224;
+  padding: 0.25rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-container > .active {
+  background-color: #363a3d;
+}
+
+.toggle-container > button {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  font-size: 14px;
+  width: 140px;
+  background-color: #202224;
+  cursor: pointer;
+}
