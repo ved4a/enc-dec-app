@@ -6,10 +6,11 @@
 }
 
 #title {
+  font-family: "Little One", sans-serif;
   font-weight: 800;
   font-size: 48px;
   color: #333;
-  text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff;
+  text-shadow: 0 0 3px #ffd2ee, 0 0 5px #ffd2ee, 0 0 10px #ffd2ee;
 
   margin: auto 0;
 }
