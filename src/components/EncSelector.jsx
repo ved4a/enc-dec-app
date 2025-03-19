@@ -57,6 +57,8 @@ function EncryptionInput({ encryption, mode }) {
         placeholder="Start typing here"
         value={plaintext}
         onChange={(e) => setPlaintext(e.target.value)}
+        required
+        autoFocus
       />
 
       <p className="section-title">Enter key</p>
@@ -69,6 +71,7 @@ function EncryptionInput({ encryption, mode }) {
           placeholder="Enter shift here"
           value={shift}
           onChange={(e) => setShift(e.target.value)}
+          required
         />
       ) : encryption === "Affine" ? (
         <div className="affine-keys">
@@ -78,6 +81,7 @@ function EncryptionInput({ encryption, mode }) {
             placeholder="Enter 'a' here"
             value={a}
             onChange={(e) => setA(e.target.value)}
+            required
           />
           <input
             className="key-input"
@@ -85,6 +89,7 @@ function EncryptionInput({ encryption, mode }) {
             placeholder="Enter 'b' here"
             value={b}
             onChange={(e) => setB(e.target.value)}
+            required
           />
         </div>
       ) : (
@@ -94,6 +99,7 @@ function EncryptionInput({ encryption, mode }) {
           placeholder="Enter key here"
           value={key}
           onChange={(e) => setKey(e.target.value)}
+          required
         />
       )}
 
