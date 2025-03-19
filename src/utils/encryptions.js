@@ -9,7 +9,7 @@ export function caesarEncryption(text, shift){
     for(let i = 0; i < text.length; i++){
         if(isLetter(text[i])){
             let ascii = text.charCodeAt(i);
-            let newAscii = ((ascii - 65 + shift) % 26) + 65
+            let newAscii = ((ascii - 65 + shift) % 26) + 65;
             let newLetter = String.fromCharCode(newAscii);
             result = result.concat("", newLetter);
         } else if (text[i] == " "){
@@ -33,4 +33,27 @@ function genKey(text, key){
             key.push(key[i % ((key).length)]);
         }
     } return key.join("");
+}
+
+export function vignereEncryption(text, key){
+    let result = "";
+    text = text.toUpperCase().split(" ").join("");
+    key = genKey(key);
+
+    let count = 0;
+
+    for(let i = 0; i < text.length; i++){
+        if(isLetter(text[i])){
+            count++;
+            let textCode = text.charCodeAt(i);
+            let keyCode = key.charCodeAt(i);
+            let encCode = ((textCode + keyCode - 65) % 26) + 65;
+
+            result = result.concat("", encCode);
+            if (count % 5 == 0){
+                result = result.concat("", " ");
+            }
+        }
+    }
+    return result;
 }
