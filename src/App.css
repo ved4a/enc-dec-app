@@ -122,6 +122,7 @@ input {
   border-radius: 1.5rem;
   display: flex;
   justify-content: space-between;
+  margin-top: 1.25rem;
 }
 
 .toggle-container > .active {
