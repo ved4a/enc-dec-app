@@ -19,3 +19,18 @@ export function caesarEncryption(text, shift){
 
     return result;
 }
+
+// generate key
+// eg: text -> waterfall
+// eg: key -> hello -> hellohell
+function genKey(text, key){
+    key = key.split("");
+    if (key.length == text.length){
+        return key.join("");
+    } else {
+        let temp = key.length;
+        for (let i = 0; i < (text.length - temp) ; i++) {
+            key.push(key[i % ((key).length)]);
+        }
+    } return key.join("");
+}
