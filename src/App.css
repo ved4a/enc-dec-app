@@ -1,6 +1,7 @@
 #root {
-  max-width: 1440px;
-  min-width: 300px;
+  /* max-width: 1440px;
+  min-width: 300px; */
+  width: 300px;
   margin: auto;
   text-align: center;
 }
@@ -139,5 +140,11 @@ input {
 
 .affine-keys {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.affine-keys .key-input {
+  flex: 1;
+  min-width: 0;
 }
