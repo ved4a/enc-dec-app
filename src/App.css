@@ -136,3 +136,8 @@ input {
   background-color: #202224;
   cursor: pointer;
 }
+
+.affine-keys {
+  display: flex;
+  flex-direction: column;
+}
