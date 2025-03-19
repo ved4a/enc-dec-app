@@ -24,15 +24,8 @@ export function caesarEncryption(text, shift){
 // eg: text -> waterfall
 // eg: key -> hello -> hellohell
 function genKey(text, key){
-    key = key.split("");
-    if (key.length == text.length){
-        return key.join("");
-    } else {
-        let temp = key.length;
-        for (let i = 0; i < (text.length - temp) ; i++) {
-            key.push(key[i % ((key).length)]);
-        }
-    } return key.join("");
+    let newKey = key.repeat(Math.ceil(text.length / key.length)).slice(0, text.length);
+    return newKey;
 }
 
 export function vignereEncryption(text, key){
