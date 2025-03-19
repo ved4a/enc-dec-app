@@ -9,7 +9,8 @@ export function caesarEncryption(text, shift){
     for(let i = 0; i < text.length; i++){
         if(isLetter(text[i])){
             let ascii = text.charCodeAt(i);
-            let newLetter = String.fromCharCode(ascii + shift);
+            let newAscii = ((ascii - 65 + shift) % 26) + 65
+            let newLetter = String.fromCharCode(newAscii);
             result = result.concat("", newLetter);
         } else if (text[i] == " "){
             result = result.concat("", " ");
