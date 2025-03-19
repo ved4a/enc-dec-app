@@ -40,8 +40,10 @@ function EncryptDecryptToggle({ mode, onToggle }) {
 
 function EncryptionInput({ encryption, mode }) {
   const [plaintext, setPlaintext] = useState("");
-  const [key, setKey] = useState("");
-  const [shift, setShift] = useState("");
+  const [key, setKey] = useState(""); // For Vigenere & Playfair
+  const [shift, setShift] = useState(""); // For Caesar
+  const [a, setA] = useState(""); // Affine key 'a'
+  const [b, setB] = useState(""); // Affine key 'b'
 
   if (!encryption) return null;
 
@@ -56,6 +58,7 @@ function EncryptionInput({ encryption, mode }) {
         value={plaintext}
         onChange={(e) => setPlaintext(e.target.value)}
       />
+
       <p className="section-title">Enter key</p>
       {encryption === "Caesar" ? (
         <input
@@ -67,6 +70,23 @@ function EncryptionInput({ encryption, mode }) {
           value={shift}
           onChange={(e) => setShift(e.target.value)}
         />
+      ) : encryption === "Affine" ? (
+        <div className="affine-keys">
+          <input
+            className="key-input"
+            type="number"
+            placeholder="Enter 'a' here"
+            value={a}
+            onChange={(e) => setA(e.target.value)}
+          />
+          <input
+            className="key-input"
+            type="number"
+            placeholder="Enter 'b' here"
+            value={b}
+            onChange={(e) => setB(e.target.value)}
+          />
+        </div>
       ) : (
         <input
           className="key-input"
@@ -76,6 +96,7 @@ function EncryptionInput({ encryption, mode }) {
           onChange={(e) => setKey(e.target.value)}
         />
       )}
+
       <button className={`enc-btn ${mode}`}>
         {mode === "encrypt" ? "Encrypt text" : "Decrypt text"}
         <img
@@ -87,6 +108,7 @@ function EncryptionInput({ encryption, mode }) {
     </div>
   );
 }
+
 
 export default function EncryptionApp() {
   const [selectedEncryption, setSelectedEncryption] = useState("");
