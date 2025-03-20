@@ -40,10 +40,10 @@ export function affineDecryption(text, a, b){
     // find inverse
     while(flag != 1 && i < 26){
         flag = (a * i) % 26;
-
         if(flag == 1){
             a_inverse = i;
         }
+        i++;
     };
 
     for(let i = 0; i < text.length; i ++){
