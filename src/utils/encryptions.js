@@ -1,4 +1,4 @@
-function isLetter(c){
+export function isLetter(c){
     return c.toUpperCase() != c.toLowerCase();
 }
 
@@ -23,7 +23,7 @@ export function caesarEncryption(text, shift){
 // generate key
 // eg: text -> waterfall
 // eg: key -> hello -> hellohell
-function genKey(text, key){
+export function genKey(text, key){
     key = key.toUpperCase();
     return key.repeat(Math.ceil(text.length / key.length)).slice(0, text.length);;
 }
