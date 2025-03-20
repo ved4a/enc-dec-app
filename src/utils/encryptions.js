@@ -24,8 +24,8 @@ export function caesarEncryption(text, shift){
 // eg: text -> waterfall
 // eg: key -> hello -> hellohell
 function genKey(text, key){
-    let newKey = key.repeat(Math.ceil(text.length / key.length)).slice(0, text.length);
-    return newKey;
+    key = key.toUpperCase();
+    return key.repeat(Math.ceil(text.length / key.length)).slice(0, text.length);;
 }
 
 export function vignereEncryption(text, key){
@@ -39,7 +39,7 @@ export function vignereEncryption(text, key){
         if(isLetter(text[i])){
             count++;
             // Ei = (Pi + Ki) mod 26
-            let encCode = ((text.charCodeAt(i) + key.charCodeAt(i) - 65) % 26) + 65;
+            let encCode = ((text.charCodeAt(i) + key.charCodeAt(i) - 130) % 26) + 65;
             let encText = String.fromCharCode(encCode);
 
             result = result.concat("", encText);
