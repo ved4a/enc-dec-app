@@ -28,3 +28,20 @@ export function vigenereDecryption(text, key){
     }
     return plaintext;
 }
+
+export function affineDecryption(text, a, b){
+    let plaintext = "";
+    let a_inverse = 0;
+    let flag = 0;
+    let i = 0;
+
+    // find inverse
+    while(flag != 1 && i < 26){
+        flag = (a * i) % 26;
+
+        if(flag == 1){
+            a_inv = i;
+        }
+    };
+
+}
