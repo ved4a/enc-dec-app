@@ -31,16 +31,16 @@ function genKey(text, key){
 export function vignereEncryption(text, key){
     let result = "";
     text = text.toUpperCase().split(" ").join("");
-    key = genKey(key);
+    key = genKey(text, key);
 
     let count = 0;
 
     for(let i = 0; i < text.length; i++){
         if(isLetter(text[i])){
             count++;
-            let textCode = text.charCodeAt(i);
-            let keyCode = key.charCodeAt(i);
-            let encCode = ((textCode + keyCode - 65) % 26) + 65;
+            // Ei = (Pi + Ki) mod 26
+            let encCode = ((text.charCodeAt(i) + key.charCodeAt(i) - 65) % 26) + 65;
+            let encText = String.fromCharCode(encCode);
 
             result = result.concat("", encCode);
             if (count % 5 == 0){
