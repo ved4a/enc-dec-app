@@ -50,3 +50,21 @@ export function vigenereEncryption(text, key){
     }
     return result;
 }
+
+export function affineEncryption(text, a, b){
+    let result = "";
+    text = text.toUpperCase();
+
+    for(let i = 0; i < text.length; i++){
+        if(text[i] != " "){
+            // E = (a * x + b) mod 26
+            let encCode = (a * (text.charCodeAt(i) - 65) + b) % 26;
+            let encASCII = String.fromCharCode(encCode + 65);
+
+            result += encASCII;
+        } else {
+            result += " ";
+        }
+    }
+    return result;
+}
