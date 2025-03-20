@@ -42,7 +42,7 @@ export function vignereEncryption(text, key){
             let encCode = ((text.charCodeAt(i) + key.charCodeAt(i) - 65) % 26) + 65;
             let encText = String.fromCharCode(encCode);
 
-            result = result.concat("", encCode);
+            result = result.concat("", encText);
             if (count % 5 == 0){
                 result = result.concat("", " ");
             }
