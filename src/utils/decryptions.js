@@ -46,15 +46,15 @@ export function affineDecryption(text, a, b){
         }
     };
 
-    if(text[i] != " "){
-        for(let i = 0; i < text.length; i ++){
+    for(let i = 0; i < text.length; i ++){
+        if(text[i] != " "){
             let decCode = a_inverse * ((text.charCodeAt(i) - 65) - b) % 26;
             let decASCII = String.fromCharCode(decCode + 65);
     
             plaintext += decASCII;
+        } else {
+            plaintext += " ";
         }
-    } else {
-        plaintext += " ";
     }
     return plaintext;
 }
