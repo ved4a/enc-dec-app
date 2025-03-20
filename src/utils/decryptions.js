@@ -30,7 +30,9 @@ export function vigenereDecryption(text, key){
 }
 
 export function affineDecryption(text, a, b){
+    text = text.toUpperCase();
     let plaintext = "";
+
     let a_inverse = 0;
     let flag = 0;
     let i = 0;
@@ -40,8 +42,19 @@ export function affineDecryption(text, a, b){
         flag = (a * i) % 26;
 
         if(flag == 1){
-            a_inv = i;
+            a_inverse = i;
         }
     };
 
+    if(text[i] != " "){
+        for(let i = 0; i < text.length; i ++){
+            let decCode = a_inverse * ((text.charCodeAt(i) - 65) - b) % 26;
+            let decASCII = String.fromCharCode(decCode + 65);
+    
+            plaintext += decASCII;
+        }
+    } else {
+        plaintext += " ";
+    }
+    return plaintext;
 }
