@@ -5,3 +5,26 @@ import { isLetter } from "./encryptions";
 export function caesarDecryption(text, shift){
     return caesarEncryption(text, 26 - shift);
 }
+
+export function vigenereDecryption(text, key){
+    let plaintext = "";
+    text = text.toUpperCase().split(" ").join("");
+    key = genKey(text, key);
+
+    let count = 0;
+
+    for(let i = 0; i < text.length; i++){
+        if(isLetter(text[i])){
+            count++;
+            // Pi = (Ei - Ki) mod 26
+            let decCode = ((text.charCodeAt(i) - key.charCodeAt(i) + 26) % 26) + 65;
+            let decText = String.fromCharCode(decCode);
+
+            plaintext = plaintext.concat("", decText);
+            if (count % 5 == 0){
+                plaintext = plaintext.concat("", " ");
+            }
+        }
+    }
+    return plaintext;
+}
