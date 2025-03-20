@@ -28,7 +28,7 @@ function genKey(text, key){
     return key.repeat(Math.ceil(text.length / key.length)).slice(0, text.length);;
 }
 
-export function vignereEncryption(text, key){
+export function vigenereEncryption(text, key){
     let result = "";
     text = text.toUpperCase().split(" ").join("");
     key = genKey(text, key);
