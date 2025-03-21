@@ -68,3 +68,15 @@ export function affineEncryption(text, a, b){
     }
     return result;
 }
+
+export function playfairEncryption(text, key){
+    let result = "";
+    text = text.toUpperCase();
+    key = key.toUpperCase();
+
+    let arr = [];
+    for(let i = 0; i < 5; i++){
+        let letters = [];
+        arr.push(letters);
+    }
+}
