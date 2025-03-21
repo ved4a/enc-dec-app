@@ -17,6 +17,15 @@ function removeDuplicateLetters(str) {
     return result;
 }
 
+// find position of an element in an array
+function findPosition(letter) {
+    for (let row = 0; row < 5; row++) {
+        let col = arr[row].indexOf(letter);
+        if (col !== -1) return { row, col };
+    }
+    return null;
+}
+
 export function caesarEncryption(text, shift){
     let result = "";
     text = text.toUpperCase();
