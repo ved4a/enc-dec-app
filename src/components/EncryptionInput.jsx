@@ -52,7 +52,7 @@ function EncryptionInput({ encryption, mode }) {
   const handleEncryptDecrypt = () => {
     let result = "";
 
-    if (mode == "encrypt"){
+    if (mode === "encrypt"){
       switch(encryption){
         case "Caesar":
           result = caesarEncryption(text, parseInt(shift));
@@ -149,7 +149,7 @@ function EncryptionInput({ encryption, mode }) {
         />
       )}
 
-      <button className={`enc-btn ${mode}`}>
+      <button className={`enc-btn ${mode}`} onClick={handleEncryptDecrypt}>
         {mode === "encrypt" ? "Encrypt text" : "Decrypt text"}
         <img
           src="./src/assets/right-arrow.svg"
