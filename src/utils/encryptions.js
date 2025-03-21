@@ -1,5 +1,20 @@
 export function isLetter(c){
     return c.toUpperCase() != c.toLowerCase();
+};
+
+function removeDuplicateLetters(str) {
+    let seen = new Set();
+    let result = '';
+    
+    for (let char of str) {
+        let normalizedChar = (char === 'J' || char === 'I') ? 'I' : char;
+        if (!seen.has(normalizedChar)) {
+            seen.add(normalizedChar);
+            result += char;
+        }
+    }
+    
+    return result;
 }
 
 export function caesarEncryption(text, shift){
@@ -71,12 +86,20 @@ export function affineEncryption(text, a, b){
 
 export function playfairEncryption(text, key){
     let result = "";
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     text = text.toUpperCase();
     key = key.toUpperCase();
 
+    // to hold the rows of 5 letters
     let arr = [];
     for(let i = 0; i < 5; i++){
         let letters = [];
         arr.push(letters);
     }
+
+    // remove duplicates
+    let total = key + alphabet;
+    let encryptSquare = removeDuplicateLetters(key + alphabet);
 }
+
+console.log(playfairEncryption("hello", "key"));
