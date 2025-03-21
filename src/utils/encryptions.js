@@ -127,4 +127,25 @@ export function playfairEncryption(text, key){
         }
         pairs.push([first, second]);
     }
+
+    // encrypt pairs
+    for (let [a, b] of pairs) {
+        let posA = findPosition(a);
+        let posB = findPosition(b);
+        
+        if (posA.row === posB.row) {
+            // same row -> shift right with wrap-around
+            result += arr[posA.row][(posA.col + 1) % 5];
+            result += arr[posB.row][(posB.col + 1) % 5];
+        } else if (posA.col === posB.col) {
+            // same index -> shift down with wrap-around
+            result += arr[(posA.row + 1) % 5][posA.col];
+            result += arr[(posB.row + 1) % 5][posB.col];
+        } else {
+            // diff index, row -> swap
+            result += arr[posA.row][posB.col];
+            result += arr[posB.row][posA.col];
+        }
+    }
+    return result;
 }
