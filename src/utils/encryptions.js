@@ -101,11 +101,21 @@ export function playfairEncryption(text, key){
     let total = key + alphabet;
     let encryptSquare = removeDuplicateLetters(total);
 
+    // create the playfair square
     for(let i = 0; i < 25; i++){
         let index = Math.floor(i / 5);
         arr[index].push(encryptSquare[i]);
     }
-    return arr;
-}
 
-console.log(playfairEncryption("hello", "key"));
+    // break text into pairs
+    let pairs = [];
+    for (let i = 0; i < text.length; i += 2) {
+        let first = text[i];
+        let second = text[i + 1] || 'X';
+        if (first === second) {
+            second = 'X';
+            i--;
+        }
+        pairs.push([first, second]);
+    }
+}
