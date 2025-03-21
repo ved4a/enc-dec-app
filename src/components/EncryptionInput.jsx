@@ -42,7 +42,7 @@ function EncryptDecryptToggle({ mode, onToggle }) {
 }
 
 function EncryptionInput({ encryption, mode }) {
-  const [plaintext, setPlaintext] = useState("");
+  const [text, setText] = useState("");
   const [key, setKey] = useState(""); // For Vigenere & Playfair
   const [shift, setShift] = useState(""); // For Caesar
   const [a, setA] = useState(""); // Affine key 'a'
@@ -58,8 +58,8 @@ function EncryptionInput({ encryption, mode }) {
       <textarea
         className="plaintext-input"
         placeholder="Start typing here"
-        value={plaintext}
-        onChange={(e) => setPlaintext(e.target.value)}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
         required
         autoFocus
       />
