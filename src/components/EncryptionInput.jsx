@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { caesarEncryption, vigenereEncryption, affineEncryption, playfairEncryption } from "../utils/encryptions";
 import { caesarDecryption, vigenereDecryption, affineDecryption, playfairDecryption } from "../utils/decryptions";
 
@@ -47,6 +47,49 @@ function EncryptionInput({ encryption, mode }) {
   const [shift, setShift] = useState(""); // For Caesar
   const [a, setA] = useState(""); // Affine key 'a'
   const [b, setB] = useState(""); // Affine key 'b'
+  const navigate = useNavigate();
+
+  const handleEncryptDecrypt = () => {
+    let result = "";
+
+    if (mode == "encrypt"){
+      switch(encryption){
+        case "Caesar":
+          result = caesarEncryption(text, parseInt(shift));
+          break;
+        case "Vigenere":
+          result = vigenereEncryption(text, key);
+          break;
+        case "Playfair":
+          result = playfairEncryption(text, key);
+          break;
+        case "Affine":
+          result = affineEncryption(text, parseInt(a), parseInt(b));
+          break;
+        default:
+          result = "Invalid encryption method";
+      }
+    } else {
+      switch (encryption) {
+        case "Caesar":
+          result = caesarDecryption(text, parseInt(shift));
+          break;
+        case "Vigenere":
+          result = vigenereDecryption(text, key);
+          break;
+        case "Playfair":
+          result = playfairDecryption(text, key);
+          break;
+        case "Affine":
+          result = affineDecryption(text, parseInt(a), parseInt(b));
+          break;
+        default:
+          result = "Invalid decryption method";
+      }
+    }
+
+    navigate("/result", { state : {result, mode}});
+  }
 
   if (!encryption) return null;
 
