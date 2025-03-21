@@ -1,9 +1,10 @@
 import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import { caesarEncryption, vigenereEncryption, affineEncryption, playfairEncryption } from "../utils/encryptions";
 import { caesarDecryption, vigenereDecryption, affineDecryption, playfairDecryption } from "../utils/decryptions";
 
 function SetEncryption({ onSelect }) {
-  const encryptions = ["Vigenere", "Playfair", "Caesar", "Affine"];
+  const encryptions = ["Affine" , "Caesar", "Playfair", "Vigenere"];
   return (
     <div className="section">
       <p className="section-title">Choose your cipher</p>
