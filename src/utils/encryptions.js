@@ -87,7 +87,7 @@ export function affineEncryption(text, a, b){
 export function playfairEncryption(text, key){
     let result = "";
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    text = text.toUpperCase();
+    text = text.toUpperCase().split(" ").join("");
     key = key.toUpperCase().split(" ").join("");
 
     // to hold the rows of 5 letters
