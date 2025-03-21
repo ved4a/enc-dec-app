@@ -2,7 +2,7 @@ export function isLetter(c){
     return c.toUpperCase() != c.toLowerCase();
 };
 
-function removeDuplicateLetters(str) {
+export function removeDuplicateLetters(str) {
     let seen = new Set();
     let result = '';
     
@@ -15,15 +15,6 @@ function removeDuplicateLetters(str) {
     }
     
     return result;
-}
-
-// find position of an element in an array
-function findPosition(letter) {
-    for (let row = 0; row < 5; row++) {
-        let col = arr[row].indexOf(letter);
-        if (col !== -1) return { row, col };
-    }
-    return null;
 }
 
 export function caesarEncryption(text, shift){
@@ -98,9 +89,18 @@ export function playfairEncryption(text, key){
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     text = text.toUpperCase().split(" ").join("");
     key = key.toUpperCase().split(" ").join("");
+    let arr = [];
+
+    // find position of an element
+    function findPosition(letter) {
+        for (let row = 0; row < 5; row++) {
+            let col = arr[row].indexOf(letter);
+            if (col !== -1) return { row, col };
+        }
+        return null;
+    }
 
     // to hold the rows of 5 letters
-    let arr = [];
     for(let i = 0; i < 5; i++){
         let letters = [];
         arr.push(letters);
