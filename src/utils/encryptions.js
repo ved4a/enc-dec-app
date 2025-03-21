@@ -88,7 +88,7 @@ export function playfairEncryption(text, key){
     let result = "";
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     text = text.toUpperCase();
-    key = key.toUpperCase();
+    key = key.toUpperCase().split(" ").join("");
 
     // to hold the rows of 5 letters
     let arr = [];
@@ -99,7 +99,13 @@ export function playfairEncryption(text, key){
 
     // remove duplicates
     let total = key + alphabet;
-    let encryptSquare = removeDuplicateLetters(key + alphabet);
+    let encryptSquare = removeDuplicateLetters(total);
+
+    for(let i = 0; i < 25; i++){
+        let index = Math.floor(i / 5);
+        arr[index].push(encryptSquare[i]);
+    }
+    return arr;
 }
 
 console.log(playfairEncryption("hello", "key"));
