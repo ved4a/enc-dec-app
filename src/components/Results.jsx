@@ -19,7 +19,7 @@ export default function ResultsPage() {
         {mode === "encrypt" ? "Encrypted Text:" : "Decrypted Text:"}
       </p>
 
-      <textarea className="result-text" value={result} readOnly />
+      <textarea className="plaintext-input" value={result} readOnly />
       <button className="copy-btn" onClick={handleCopy}>
         {copied ? "Copied!" : "Copy"}
       </button>
