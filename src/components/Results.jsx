@@ -14,16 +14,15 @@ export default function ResultsPage() {
   };
 
   return (
-    <div className="results-page">
-      <h1>Results</h1>
-      <p>{mode === "encrypt" ? "Encrypted Text:" : "Decrypted Text:"}</p>
+    <div className="section">
+      <p className="section-title">
+        {mode === "encrypt" ? "Encrypted Text:" : "Decrypted Text:"}
+      </p>
 
-      <div className="result-container">
-        <textarea className="result-text" value={result} readOnly />
-        <button className="copy-btn" onClick={handleCopy}>
-          {copied ? "Copied!" : "Copy"}
-        </button>
-      </div>
+      <textarea className="result-text" value={result} readOnly />
+      <button className="copy-btn" onClick={handleCopy}>
+        {copied ? "Copied!" : "Copy"}
+      </button>
 
       <button className="back-btn" onClick={() => navigate("/")}>
         Encrypt (or Decrypt) More!
