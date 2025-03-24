@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { caesarEncryption, vigenereEncryption, affineEncryption, playfairEncryption } from "../utils/encryptions";
 import { caesarDecryption, vigenereDecryption, affineDecryption, playfairDecryption } from "../utils/decryptions";
 
