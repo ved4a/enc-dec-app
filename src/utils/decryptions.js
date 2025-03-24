@@ -4,6 +4,7 @@ import { isLetter } from "./encryptions";
 import { removeDuplicateLetters } from "./encryptions";
 
 export function caesarDecryption(text, shift){
+    if (isNaN(shift) || shift === 0) return text;
     return caesarEncryption(text, 26 - shift);
 }
 
@@ -43,6 +44,7 @@ export function affineDecryption(text, a, b){
         flag = (a * i) % 26;
         if(flag == 1){
             a_inverse = i;
+            break;
         }
         i++;
     };
