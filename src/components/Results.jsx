@@ -20,12 +20,9 @@ export default function ResultsPage() {
       </p>
 
       <textarea className="plaintext-input" value={result} readOnly />
-      <button className="copy-btn" onClick={handleCopy}>
-        {copied ? "Copied!" : "Copy"}
-      </button>
 
       <button className="back-btn" onClick={() => navigate("/")}>
-        Encrypt (or Decrypt) More!
+        Go Back
       </button>
     </div>
   );
