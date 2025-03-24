@@ -154,3 +154,9 @@ input {
   flex: 1;
   min-width: 0;
 }
+
+.back-arrow {
+  height: 20px;
+  width: auto;
+  transform:rotate(180deg);
+}
