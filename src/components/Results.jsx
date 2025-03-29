@@ -7,12 +7,6 @@ export default function ResultsPage() {
   const { result, mode } = location.state;
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(result);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <div className="section">
       <p className="section-title">
