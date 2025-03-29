@@ -1,6 +1,6 @@
 # Lock&Key
 
-A web-based tetra-cipher tool.
+A web-based tetra-cipher tool. The live demo can be viewed [here](https://ved4a.github.io/lock-and-key/).
 
 ## Features
 - Supports Vigenère, Playfair, Caesar, and Affine cipher algorithms.
