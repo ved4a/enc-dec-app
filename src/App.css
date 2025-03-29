@@ -1,9 +1,14 @@
 #root {
+  display: flex;
+  flex-direction: column;
+
   max-width: 400px;
   width: 300px;
+  min-height: 100vh;
+
   margin: auto;
+
   text-align: center;
-  margin-top: 1em;
 }
 
 #title {
@@ -142,4 +147,16 @@ input {
 .back-btn:hover{
   background-color: #464A66;
   box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+}
+
+footer {
+  margin-top: auto;
+  font-size: 20px;
+  color:#f5f5f5;
+  font-family: "Jersey 10", sans-serif;
+}
+
+footer > a {
+  text-decoration: none;
+  color:#a9a8ff;
 }
