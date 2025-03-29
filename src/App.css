@@ -8,11 +8,11 @@
 }
 
 #title {
-  font-family: "Lilita One", sans-serif;
+  font-family: "Jersey 10", sans-serif;
   font-weight: 800;
-  font-size: 40px;
-  color: #333;
-  text-shadow: 0 0 3px #ffd2ee, 0 0 5px #ffd2ee, 0 0 10px #ffd2ee;
+  font-size: 3rem;
+  color: #f5f5f5;
+  text-shadow: 0 0 2px #ff0000, 0 0 3px #FF0000, 0 0 5px #FF0000;
 
   margin: auto 0;
 }
