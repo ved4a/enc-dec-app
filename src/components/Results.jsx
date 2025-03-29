@@ -16,7 +16,7 @@ export default function ResultsPage() {
   return (
     <div className="section">
       <p className="section-title">
-        {mode === "encrypt" ? "Encrypted Text:" : "Decrypted Text:"}
+        {mode === "encrypt" ? "< Encrypted Text />" : "< Decrypted Text />"}
       </p>
 
       <textarea className="plaintext-input" value={result} readOnly />

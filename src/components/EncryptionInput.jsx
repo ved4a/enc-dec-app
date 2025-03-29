@@ -7,7 +7,7 @@ function SetEncryption({ onSelect }) {
   const encryptions = ["Affine" , "Caesar", "Playfair", "Vigenere"];
   return (
     <div className="section">
-      <p className="section-title">Choose your cipher</p>
+      <p className="section-title">&lt; Choose your cipher &#47;&gt;</p>
       <select className="select-btn" onChange={(e) => onSelect(e.target.value)}>
         <option className="default-option" value="">
           -- Select --
@@ -96,7 +96,7 @@ function EncryptionInput({ encryption, mode }) {
   return (
     <div className="section actual-encryption">
       <p className="section-title">
-        {mode === "encrypt" ? "Enter plaintext" : "Enter ciphertext"}
+        {mode === "encrypt" ? "< Enter plaintext />" : "< Enter ciphertext />"}
       </p>
       <textarea
         className="plaintext-input"
@@ -107,7 +107,7 @@ function EncryptionInput({ encryption, mode }) {
         autoFocus
       />
 
-      <p className="section-title">Enter key</p>
+      <p className="section-title">&lt; Enter key &#47;&gt;</p>
       {encryption === "Caesar" ? (
         <input
           className="key-input"
