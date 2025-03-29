@@ -16,11 +16,6 @@ export default function ResultsPage() {
       <textarea className="plaintext-input" value={result} readOnly />
 
       <button className="back-btn" onClick={() => navigate("/")}>
-      <img
-          src="./src/assets/right-arrow.svg"
-          alt="back-arrow"
-          className="back-arrow"
-        />
         Go Back
       </button>
     </div>

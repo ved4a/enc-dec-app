@@ -151,11 +151,6 @@ function EncryptionInput({ encryption, mode }) {
 
       <button className={`enc-btn ${mode}`} onClick={handleEncryptDecrypt}>
         {mode === "encrypt" ? "Encrypt text" : "Decrypt text"}
-        <img
-          src="./src/assets/right-arrow.svg"
-          alt="right-arrow"
-          className="arrow"
-        />
       </button>
     </div>
   );
