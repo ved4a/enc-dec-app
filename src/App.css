@@ -1,7 +1,7 @@
 #root {
-  /* max-width: 1440px;
-  min-width: 300px; */
-  width: 300px;
+  /* max-width: 1440px; */
+  min-width: 300px;
+  width: 400px;
   margin: auto;
   text-align: center;
   margin-top: 1em;
@@ -15,13 +15,6 @@
   text-shadow: 0 0 3px #ffd2ee, 0 0 5px #ffd2ee, 0 0 10px #ffd2ee;
 
   margin: auto 0;
-}
-
-#tagline {
-  margin: 0;
-  font-style: italic;
-
-  font-size: 12px;
 }
 
 .section {
